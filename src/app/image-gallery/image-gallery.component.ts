@@ -9,14 +9,17 @@ export class ImageGalleryComponent implements OnInit {
 
   constructor() { }
 
-  @Input() links: string[] = [];
+  @Input() links: string[] = []; 
   
+  urlData:string[] = [];
+
   ngOnInit(): void {
+    this.urlData = this.links;
   }
 
 
-  removeImg(id:any) {
-    this.links[id]
+  removeImg(url:string) {
+    this.urlData = this.links.filter(e=>(url==e));
   }
 
 }

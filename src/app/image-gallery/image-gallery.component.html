@@ -1,5 +1,6 @@
 <div>
     <h1>image app-image-gallery</h1>
-    <!-- <div  ngFor let link [ngForOf]="links" let i="index" > </div> -->
-    <!-- <button (click)=removeImg(i) > x </button> -->
+    <div *ngFor="let link of urlData; let i = index" > 
+        <app-img-tag [link]="link" (removeImg)="removeImg(link)" ></app-img-tag> 
+    </div>
 </div>
